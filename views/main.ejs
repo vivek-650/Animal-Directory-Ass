@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Animal Directory</h1>
+    <div class="cont">
+        <% animals.forEach(animal => { %>
+            <div class="card">
+                <h2><%= animal.petName %></h2>
+                <p>Type: <%= animal.animalType %></p><br>
+                <div class="but">
+                    <form action="/animals/edit/<%= animal.id %>">
+                        <button type="submit" class="btn">Edit</button>
+                    </form>
+                    <form action="/animals/<%= animal.id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="btn">Delete</button>
+                    </form>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+    <a href="/animals/new" class="btn">Add New Animal</a>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Edit Directory</h1>
+    <div class="form-container">
+        <h2>Add New Animal Listing</h2>
+        <form action="/animals/edit/<%= animal.id %>?_method=PATCH" method="POST">
+            <label for="petName">Pet Name:</label><br>
+            <input type="text" id="petName" name="petName" value="<%= animal.petName %>" required><br>
+            <label for="animalType">Animal Type:</label><br>
+            <input type="text" id="animalType" name="animalType" value="<%= animal.animalType%>" required><br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
